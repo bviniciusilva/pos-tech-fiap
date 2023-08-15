@@ -1,0 +1,98 @@
+[
+  {
+    "nome": "Big Mac",
+    "tipo": "lanche",
+    "preco": 29.9,
+    "medida": "unidade",
+    "aceitaOpcional": true,
+    "descricao": "Dois hambúrgueres (100% carne bovina), alface americana, queijo cheddar, maionese Big Mac, cebola, picles e pão com gergelim"
+  },
+  {
+    "nome": "Big Tasty Bacon Barbecue",
+    "tipo": "lanche",
+    "preco": 35.9,
+    "medida": "unidade",
+    "aceitaOpcional": true,
+    "descricao": "Um hambúrguer (100% carne bovina), queijo sabor emental, molho barbecue (molho não emulsionado sabor barbecue), fatias de bacon, tomate, alface americana, cebola crispy, molho tasty (molho emulsionado sabor carne grelhada) e pão com gergelim"
+  },
+  {
+    "nome": "Duplo Quarterão",
+    "tipo": "lanche",
+    "preco": 31.5,
+    "medida": "unidade",
+    "aceitaOpcional": true,
+    "descricao": "Dois hambúrgueres (100% carne bovina), mostarda, ketchup, cebola, queijo cheddar e pão com gergelim"
+  },
+  {
+    "nome": "Coca cola 700ml",
+    "tipo": "bebida",
+    "preco": 8.99,
+    "medida": "litro",
+    "aceitaOpcional": false,
+    "descricao": "Bebida gelada na medida certa para matar sua sede. Refrescante Coca-Cola 700ml"
+  },
+  {
+    "nome": "Fanta Laranja 700ml",
+    "tipo": "bebida",
+    "preco": 8.99,
+    "medida": "litro",
+    "aceitaOpcional": false,
+    "descricao": "Bebida gelada na medida certa para matar sua sede. Refrescante Fanta sabor Laranja 700ml"
+  },
+  {
+    "nome": "Café Premium 300ml",
+    "tipo": "bebida",
+    "preco": 2.99,
+    "medida": "litro",
+    "aceitaOpcional": false,
+    "descricao": "Combinação dos mais intensos aromas e sabores de grãos selecionados. Servido bem quente. 300ml"
+  },
+  {
+    "nome": "McFlurry M&M’s",
+    "tipo": "sobremesa",
+    "preco": 12.99,
+    "medida": "unidade",
+    "aceitaOpcional": false,
+    "descricao": "Composto por bebida láctea sabor baunilha, cobertura sabor chocolate e M&M´s ® chocolate ao leite"
+  },
+  {
+    "nome": "McFlurry Ovomaltine Rocks",
+    "tipo": "sobremesa",
+    "preco": 13.99,
+    "medida": "unidade",
+    "aceitaOpcional": false,
+    "descricao": "Massa gelada, calda de chocolate, Ovomaltine em pó e pedaços crocantes de Ovomaltine rocks"
+  },
+  {
+    "nome": "McFritas Média",
+    "tipo": "opcional",
+    "preco": 5.99,
+    "medida": "unidade",
+    "aceitaOpcional": false,
+    "descricao": "Deliciosas batatas selecionadas, fritas, crocantes por fora, macias por dentro, douradas, irresistíveis, saborosas, famosas, e todos os outros adjetivos positivos que você quiser dar"
+  },
+  {
+    "nome": "Mega Chicken McNuggets 15 unidades",
+    "tipo": "opcional",
+    "preco": 15.50,
+    "medida": "unidade",
+    "aceitaOpcional": false,
+    "descricao": "Crocantes, leves e deliciosos. Os frangos empanados mais irresistíveis do McDonald’s agora na versão Mega, ideal para compartilhar. Composto por 15 unidades de Chicken McNuggets"
+  },
+  {
+    "nome": "Molho Agridoce",
+    "tipo": "opcional",
+    "preco": 2.50,
+    "medida": "unidade",
+    "aceitaOpcional": false,
+    "descricao": "Escolha seu molho favorito para se deliciar com os chicken McNuggets, ou se preferir, com as deliciosas e crocantes McFritas"
+  },
+  {
+    "nome": "Molho Barbecue",
+    "tipo": "opcional",
+    "preco": 2.50,
+    "medida": "unidade",
+    "aceitaOpcional": false,
+    "descricao": "Escolha seu molho favorito para se deliciar com os chicken McNuggets, ou se preferir, com as deliciosas e crocantes McFritas"
+  }
+]

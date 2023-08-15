@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pos-tech-api
+spec:
+  containers:
+  - name: pos-tech-api
+    image: bviniciusilva/postech:v01
+    ports:
+        - containerPort: 3000

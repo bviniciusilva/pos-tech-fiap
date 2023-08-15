@@ -1,0 +1,29 @@
+{
+  "ts-node": {
+    "transpileOnly": true,
+    "require": ["tsconfig-paths/register"]
+  },
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "outDir": "./build",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "rootDir": "src",
+    "baseUrl": "./",
+    "types": ["jest"],
+    "paths": {
+      "src/*": ["src/*"],
+      "@infra/*": ["src/infra/*"],
+      "@domain/*": ["src/domain/*"],
+      "@shared/*": ["src/shared/*"]
+    },
+    "typeRoots": ["node_modules/@types", "./*.d.ts"]
+  },
+  "include": ["src/**/*"]
+}

@@ -1,0 +1,425 @@
+openapi: 3.0.0
+info:
+  title: PosTech
+  description: Rotas para a API da PosTech
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Sandbox
+paths:
+  /clientes:
+    get:
+      summary: Listar todos os clientes
+      tags:
+        - Cliente
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/Cliente" }
+    post:
+      summary: Criar um novo cliente
+      tags:
+        - Cliente
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                cpf:
+                  type: string
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Cliente"
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /clientes/{uuid}:
+    parameters:
+      - in: path
+        name: uuid
+        schema:
+          type: string
+        required: true
+        description: ID
+    get:
+      summary: Buscar um cliente pelo ID
+      tags:
+        - Cliente
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Cliente"
+    patch:
+      summary: Atualizar um cliente pelo ID
+      tags:
+        - Cliente
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                cpf:
+                  type: string
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Cliente"
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    delete:
+      summary: Deletar um cliente pelo ID
+      tags:
+        - Cliente
+      responses:
+        200:
+          description: Success
+  /clientes/cpf/{cpf}:
+    get:
+      summary: Listar um cliente pelo CPF
+      tags:
+        - Cliente
+      parameters:
+        - in: path
+          name: cpf
+          schema:
+            type: string
+          required: true
+          description: CPF
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Cliente"
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /itens:
+    get:
+      summary: Listar todos os itens
+      tags:
+        - Item
+      parameters:
+        - in: query
+          name: tipo
+          schema:
+            type: string
+          required: false
+          description: Categoria
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/Item" }
+    post:
+      summary: Criar um novo item
+      tags:
+        - Item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tipo:
+                  type: string
+                medida:
+                  type: string
+                nome:
+                  type: string
+                aceitaOpcional:
+                  type: boolean
+                preco:
+                  type: number
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Item"
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /itens/{uuid}:
+    parameters:
+      - in: path
+        name: uuid
+        schema:
+          type: integer
+        required: true
+        description: ID
+    get:
+      summary: Buscar item pelo ID
+      tags:
+        - Item
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Item"
+    patch:
+      summary: Atualizar um item pelo ID
+      tags:
+        - Item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tipo:
+                  type: string
+                medida:
+                  type: string
+                nome:
+                  type: string
+                aceitaOpcional:
+                  type: boolean
+                preco:
+                  type: number
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Item"
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    delete:
+      summary: Deletar um item pelo ID
+      tags:
+        - Item
+      responses:
+        200:
+          description: Success
+  /pedidos:
+    get:
+      summary: Listar todos os pedidos
+      tags:
+        - Pedido
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/Pedido" }
+    post:
+      summary: Criar um novo pedido
+      tags:
+        - Pedido
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cliente:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                itens:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      item:
+                        type: object
+                        properties:
+                          _id:
+                            type: string
+                      qtd:
+                        type: integer
+                status:
+                  type: string
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pedido"
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /pedidos/{uuid}:
+    parameters:
+      - in: path
+        name: uuid
+        schema:
+          type: integer
+        required: true
+        description: ID
+    patch:
+      summary: Atualizar um pedido pelo ID
+      tags:
+        - Pedido
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cliente:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                itens:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      item:
+                        type: object
+                        properties:
+                          _id:
+                            type: string
+                      qtd:
+                        type: integer
+                status:
+                  type: string
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pedido"
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    delete:
+      summary: Deletar um pedido pelo ID
+      tags:
+        - Pedido
+      responses:
+        200:
+          description: Success
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        mensagem:
+          type: string
+          description: Mensagem de erro
+    Cliente:
+      type: object
+      properties:
+        nome:
+          type: string
+          description: Nome do cliente
+        cpf:
+          type: string
+          description: CPF do cliente
+        _id:
+          type: string
+          description: ID do cliente
+        createdAt:
+          type: string
+          description: Data de criação do cliente
+        updatedAt:
+          type: string
+          description: Data de atualização do cliene
+    Item:
+      type: object
+      properties:
+        tipo:
+          type: string
+          description: Tipo do item
+        medida:
+          type: string
+          description: Medido do item
+        nome:
+          type: string
+          description: Nome do item
+        aceitaOpcional:
+          type: boolean
+          description: Opcional do item
+        preco:
+          type: number
+          description: Preço do item
+    Pedido:
+      type: object
+      properties:
+        cliente:
+          type: object
+          properties:
+            id:
+              type: string
+          description: Cliente do pedido
+        itens:
+          type: array
+          items:
+            type: object
+            properties:
+              item:
+                type: object
+                properties:
+                  _id:
+                    type: string
+              qtd:
+                type: number
+        status:
+          type: string
+          description: Status do pedido

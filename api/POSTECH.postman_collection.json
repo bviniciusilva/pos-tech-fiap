@@ -1,0 +1,438 @@
+{
+	"info": {
+		"_postman_id": "7f0575e9-17dd-4732-8d6e-99e74ea4a0f8",
+		"name": "POSTECH",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27920189"
+	},
+	"item": [
+		{
+			"name": "CLIENTE",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/clientes",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/clientes/6485c37892a4fe26cb69381d",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"clientes",
+								"6485c37892a4fe26cb69381d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar cpf",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/clientes/cpf/31817558005",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"clientes",
+								"cpf",
+								"31817558005"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Maria da silva\",\r\n    \"cpf\": \"31817558005\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/clientes/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"clientes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Maria da silva\",\r\n    \"cpf\": \"093.722.644-23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/clientes/6486035be52bfafbd70f66bc",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"clientes",
+								"6486035be52bfafbd70f66bc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Maria da silva\",\r\n    \"cpf\": \"093.722.644-23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/clientes/6486035be52bfafbd70f66bc",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"clientes",
+								"6486035be52bfafbd70f66bc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ITEM",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/itens",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"itens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar - por categoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/itens?tipo=lanche",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"itens"
+							],
+							"query": [
+								{
+									"key": "tipo",
+									"value": "lanche"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/itens/64862ccb643574a12f788544",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"itens",
+								"64862ccb643574a12f788544"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"lanche\",\r\n    \"medida\": \"unidade\",\r\n    \"nome\": \"Big MAC\",\r\n    \"aceitaOpcional\": true,\r\n    \"preco\": 19.9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/itens/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"itens",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"lanche\",\r\n    \"medida\": \"unidade\",\r\n    \"nome\": \"Big MAC Tradicional\",\r\n    \"aceitaOpcional\": true,\r\n    \"descricao\": \"Dois hambúrgueres (100% carne bovina), alface americana, queijo cheddar, maionese Big Mac, cebola, picles e pão com gergelim\",\r\n    \"preco\": 20.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/itens/64862ccb643574a12f788544",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"itens",
+								"64862ccb643574a12f788544"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Maria da silva\",\r\n    \"cpf\": \"093.722.644-23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/itens/64862ccb643574a12f788544",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"itens",
+								"64862ccb643574a12f788544"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PEDIDO",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/pedidos",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar - por status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/pedidos?status=aberto",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"pedidos"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "aberto"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/itens/64862ccb643574a12f788544",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"itens",
+								"64862ccb643574a12f788544"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cliente\": {\r\n        \"_id\": \"6485c37892a4fe26cb69381d\"\r\n    },\r\n    \"itens\": [\r\n        {\"item\": {\"_id\": \"64862ccb643574a12f788544\"}, \"qtd\": 2}\r\n    ],\r\n    \"status\": \"aberto\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/pedidos/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"pedidos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cliente\": {\r\n        \"_id\": \"6485c37892a4fe26cb69381d\"\r\n    },\r\n    \"itens\": [\r\n        {\"item\": {\"_id\": \"64862ccb643574a12f788544\"}, \"qtd\": 3}\r\n    ],\r\n    \"status\": \"aguardandoPagamento\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/pedidos/6486582650f5f53560e77a5e",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"pedidos",
+								"6486582650f5f53560e77a5e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Maria da silva\",\r\n    \"cpf\": \"093.722.644-23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/itens/64862ccb643574a12f788544",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"itens",
+								"64862ccb643574a12f788544"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
